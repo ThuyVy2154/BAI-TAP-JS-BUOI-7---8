@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Tập JS Buổi 7 - 8</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light pb-5">
+    <div class="container mt-5">
+        <h2 class="text-center text-primary mb-4">Bài Tập JS Buổi 7 - 8</h2>
+        
+        <div class="card mb-4 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Vui lòng nhập mảng số nguyên</h5>
+                <div class="input-group mb-3">
+                    <input type="number" id="inputNum" class="form-control" placeholder="Nhập số nguyên...">
+                    <button class="btn btn-success" onclick="themSo()">Thêm số</button>
+                </div>
+                <div class="alert alert-secondary">
+                    👉 Mảng hiện tại: <span id="ketQuaMang" class="fw-bold">[]</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-3">
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>1. Tổng các số dương trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="tinhTongSoDuong()">Tính tổng</button>
+                        <p class="text-danger mb-0" id="rs1"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>2. Đếm số dương trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="demSoDuong()">Đếm số dương</button>
+                        <p class="text-danger mb-0" id="rs2"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>3. Tìm số nhỏ nhất trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="timSoNhoNhat()">Tìm số nhỏ nhất</button>
+                        <p class="text-danger mb-0" id="rs3"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>4. Tìm số dương nhỏ nhất trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="timSoDuongNhoNhat()">Tìm</button>
+                        <p class="text-danger mb-0" id="rs4"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>5. Tìm số chẵn cuối cùng trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="timSoChanCuoiCung()">Tìm</button>
+                        <p class="text-danger mb-0" id="rs5"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>6. Đổi chỗ 2 giá trị trong mảng</h6>
+                        <div class="d-flex gap-2 mb-2">
+                            <input type="number" id="pos1" class="form-control form-control-sm" placeholder="Vị trí 1">
+                            <input type="number" id="pos2" class="form-control form-control-sm" placeholder="Vị trí 2">
+                        </div>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="doiChoHaiGiaTri()">Đổi chỗ</button>
+                        <p class="text-danger mb-0" id="rs6"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>7. Sắp xếp mảng tăng dần</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="sapXepTangDan()">Sắp xếp</button>
+                        <p class="text-danger mb-0" id="rs7"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>8. Tìm số nguyên tố đầu tiên trong mảng</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="timSoNguyenToDauTien()">Tìm</button>
+                        <p class="text-danger mb-0" id="rs8"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>9. Đếm số nguyên trong mảng</h6>
+                        <div class="input-group input-group-sm mb-2">
+                            <input type="number" id="inputFloat" class="form-control" placeholder="Nhập số thực...">
+                            <button class="btn btn-secondary" onclick="themSoThuc()">Thêm</button>
+                        </div>
+                        <p class="mb-1" style="font-size: 13px;">Mảng số thực: <span id="ketQuaMangSoThuc">[]</span></p>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="demSoNguyenTrongMangSoThuc()">Đếm số nguyên</button>
+                        <p class="text-danger mb-0" id="rs9"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h6>10. So sánh số lượng số âm & và số lượng số dương</h6>
+                        <button class="btn btn-primary btn-sm mb-2" onclick="soSanhAmDuong()">So sánh</button>
+                        <p class="text-danger mb-0" id="rs10"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./main.js"></script>
+</body>
+</html>
